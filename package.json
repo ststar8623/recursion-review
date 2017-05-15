@@ -1,0 +1,21 @@
+{
+  "name": "recursion",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tim-hr/recursion-exercises-base"
+  },
+  "author": "manzoid <manzoid@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tim-hr/underbar/issues"
+  },
+  "homepage": "https://github.com/ststar8623/recursion-exercises-base/blob/master/README.md",
+  "devDependencies": {
+    "mocha": "^3.4.1"
+  }
+}

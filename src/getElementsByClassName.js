@@ -4,19 +4,30 @@
 // };
 
 // But instead we're going to implement it from scratch:
-var getElementsByClassName = function(className) {
-  
-  console.log(className.nodes);
+
+
+const visitAllNodes = function(node, callback) {
+  node.childNodes.forEach(el=> visitAllNodes(el, callback)); 
+  callback(node);
 };
 
-var htmlStrings = [
-  '<div class="targetClassName"></div>',
-  '<div class="otherClassName targetClassName"></div>',
-  '<div><div class="targetClassName"></div></div>',
-  '<div><div class="targetClassName"><div class="targetClassName"></div></div></div>',
-  '<div><div></div><div><div class="targetClassName"></div></div></div>',
-  '<div><div class="targetClassName"></div><div class="targetClassName"></div></div>',
-  '<div><div class="somediv"><div class="innerdiv"><span class="targetClassName">yay</span></div></div></div>'
-];
+const flattenTreeToArray = function(node) {
+  let result = [];
+  visitAllNodes(node, child => result.push(child));
+  return result;
+};
 
-console.log(getElementsByClassName(htmlStrings));
+
+var getElementsByClassName = function(className) {
+  const html = document.body;
+  const flattenArray = flattenTreeToArray(html);
+  const foundNodes = [];
+
+  flattenArray.forEach((el) => {
+    if ((el.className !== undefined) && el.className.indexOf(className) !== -1) {
+      foundNodes.push(el);
+    }
+  });
+  console.log(foundNodes);
+  return foundNodes;
+};

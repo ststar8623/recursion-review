@@ -127,8 +127,3 @@ unparseableStrings = [
   '["foo", "bar"',
   '["foo", "bar\\"]'
 ];
-
-module.exports = {
-  stringifiableObjects: stringifiableObjects,
-  unstringifiableValues: unstringifiableValues
-};

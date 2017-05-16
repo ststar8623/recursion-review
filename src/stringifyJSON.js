@@ -35,7 +35,3 @@ const stringifyJSON = function(obj) {
     return obj + '';
   }
 };
-
-module.exports = {
-  stringifyJSON: stringifyJSON
-};

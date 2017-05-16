@@ -1,7 +1,4 @@
 // test cases are described in fixtures.js
-const { stringifyJSON } = require('../src/stringifyJSON');
-const { stringifiableObjects, unstringifiableValues } = require('./fixtures');
-const expect = require('chai').expect;
 
 describe('stringifyJSON', function() {
   it('should match the result of calling JSON.stringify', function() {
